@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: courier-tracking
+
+  h2:
+    console:
+      enabled: true
+
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.H2Dialect
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        format_sql: true
+        use_sql_comments: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    defer-datasource-initialization: true
+
+  datasource:
+    url: jdbc:h2:file:./test;
+    driverClassName: org.h2.Driver
+    username: sa
+    password: 123
+
+  session:
+    jdbc:
+      initialize-schema: always
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+  sql:
+    init:
+      continue-on-error: true
+      mode: always
