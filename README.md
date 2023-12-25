@@ -18,25 +18,23 @@
 -----
 * Clone the repository
 
-
-    git clone https://github.com/secilkara/courier-tracking.git
+        git clone https://github.com/secilkara/courier-tracking.git
 
 
 * Navigate to the root directory of the project
-
-
-    cd courier-tracking
+    
+        cd courier-tracking
 
 
 * Build the project using Maven
 
-    
-    mvn clean install
+        mvn clean install
+
 
 * Run the project using Maven
 
+        mvn spring-boot:run
 
-    mvn spring-boot:run
 
 
 ### Test
@@ -44,6 +42,7 @@
 ----
 ##### Swagger UI
 You can access the api document with the swagger ui interface link below
+
 http://localhost:8080/swagger-ui/index.html
 
 
@@ -55,7 +54,10 @@ http://localhost:8080/h2-console
     username: sa
     password: 123
 
+
 ### Endpoints
+
+------
 
 * `POST /stores/default` creates the stores in the _stores.json_ file
 * `POST /stores ` creates a new store
