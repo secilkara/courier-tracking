@@ -3,6 +3,7 @@ package com.project.couriertracking.controller;
 import com.project.couriertracking.model.request.CourierCreateRequest;
 import com.project.couriertracking.model.request.LocationUpdateRequest;
 import com.project.couriertracking.service.CourierService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,12 +25,12 @@ public class CourierController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void create(@RequestBody CourierCreateRequest courierCreateRequest) {
+    public void create(@RequestBody @Valid CourierCreateRequest courierCreateRequest) {
         courierService.create(courierCreateRequest);
     }
 
     @PatchMapping("/{id}/location")
-    public void updateLocation(@PathVariable Integer id, @RequestBody LocationUpdateRequest locationUpdateRequest) {
+    public void updateLocation(@PathVariable Integer id, @RequestBody @Valid LocationUpdateRequest locationUpdateRequest) {
         courierService.updateLocation(id, locationUpdateRequest);
     }
 

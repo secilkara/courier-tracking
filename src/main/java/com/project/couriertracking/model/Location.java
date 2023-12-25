@@ -1,5 +1,6 @@
 package com.project.couriertracking.model;
 
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -12,7 +13,8 @@ import lombok.Setter;
 @NoArgsConstructor
 @Builder
 public class Location {
-
+    @NotNull
     private Double latitude;
+    @NotNull
     private Double longitude;
 }
